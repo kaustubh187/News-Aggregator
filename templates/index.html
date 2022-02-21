@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"  href="  'css/style.css'  ">
+
+  <title>News Aggregator</title>
+</head>
+<body style="background-color: rgb(42, 56, 2);">
+  <header style="background: url('https://images.unsplash.com/photo-1567407603465-3054a47b2eb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 50%;">
+	<div class="overlay" style="width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #90849736 10%, #fd5e086b 100%);">
+<h1 style="font-family: 'Dancing Script', cursive;
+font-size: 80px;
+color: indianred;
+text-shadow: 2px 2px black;
+margin-bottom: 30px;">ALLIGATOR NEWS</h1>
+<h3 style="font-family: 'Open Sans', sans-serif;
+margin-bottom: 30px;">News Aggregator from Onion.com</h3>
+<p style="font-family: 'Open Sans', sans-serif;
+margin-bottom: 30px;">Access news headlines from media website Onion.com through this content Aggregator. You can access news on topics such as Politics,Sports,Gaming,Entertainment as well covering your daily news.</p>
+	<br>
+	<button style="border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+	margin-bottom: 50px;
+	box-shadow: 0 3px 20px 0 #0000003b;">READ MORE</button>
+		</div>
+</header>
+<div class="bar" style="background-color: rgba(252, 227, 128, 0.719); height: 70px;">
+<a href="{% url 'scrape' %}" class="btn btn-success" style="background-color: rgba(243, 240, 240, 0);position: relative;left: 300px;margin-top: 20px;width: 90px;height: 180px;font-weight: bold;font-size: 30px;padding: 10px;color: purple;text-decoration: none;top:20px;">HOME</a>
+<a href="{% url 'grape' %}" class="btn btn-success" style="background-color: rgba(0, 0, 0, 0);position: relative;left: 400px;margin-top: 20px;width: 290px;height: 80px;font-weight: bold;font-size: 30px;padding: 10px;color: green;text-decoration: none;top:20px">LATEST</a> 
+<a href="{% url 'entertainment' %}" class="btn btn-success" style="background-color: rgba(0, 0, 0, 0);position: relative;left: 550px;margin-top: 20px;width: 290px;height: 80px;font-weight: bold;font-size: 30px;padding: 10px;color: firebrick;text-decoration: none;top:20px">ENTERTAINMENT</a>
+<a href="{% url 'sports' %}" class="btn btn-success" style="background-color: rgba(0, 0, 0, 0);position: relative;left: 650px;margin-top: 20px;width: 290px;height: 80px;font-weight: bold;font-size: 30px;padding: 10px;color: olive;text-decoration: none;top:20px">SPORTS</a>
+<a href="{% url 'gaming' %}" class="btn btn-success" style="background-color: rgba(0, 0, 0, 0);position: relative;left: 720px;margin-top: 20px;width: 290px;height: 80px;font-weight: bold;font-size: 30px;padding: 10px;color: rgb(238, 39, 4);text-decoration: none;top:20px">GAMING</a>
+<a href="{% url 'politics' %}" class="btn btn-success" style="background-color: rgba(0, 0, 0, 0);position: relative;left: 800px;margin-top: 20px;width: 290px;height: 80px;font-weight: bold;font-size: 30px;padding: 10px;color: rgb(2, 83, 56);text-decoration: none;top:20px">POLITICS</a></div>
+<div class="bodi" style="background-color: rgb(2, 92, 92);">     
+<div class="card-columns" style="padding: 20px; margin-left: 70px;margin-right: 10px;">
+  {% for object in data %}
+  <div class="card" style="width: 1260px;border:5px rgba(243, 96, 96, 0.733) solid;border-radius: 30px;margin-bottom: 80px; background-color: rgba(247, 77, 210, 0.63);">
+<img class="card-img-top" style="width: 500px; position: relative; left:650px;top:70px;border: 4px solid;border-radius: 10px;" src = "{{ object.image }}">
+<div class="card-body">
+  <h5 class="card-title"><div class="card-body" style="width: 600px;position: relative;bottom: 90px;">
+    <a href="{{object.url}}" style="text-decoration:solid; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: #000;"><h5 class="card-title" style="font-size: 2.7rem; position: relative; left: 20px; text-decoration: none;">{{object.title}}</h5></a>
+  </div></h5>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div> 
+</body>
+</html>
+
