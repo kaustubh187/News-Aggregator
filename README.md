@@ -4,9 +4,10 @@
  This Django app works as a new aggregator by scraping news headlines and pictures from 'www.Onion.com'. The image urls and Headline texts are stored in database.
  We can access news headlines about Latest news, Sports news, Entertainment news, gaming news etc. 
  # Screenshots
- [Screenshot 2022-02-27 012035](https://user-images.githubusercontent.com/81306562/155857171-34075586-e7e5-4ff9-900c-2ca814ef4cf8.png)
- ![Screenshot 2022-02-27 012035](https://user-images.githubusercontent.com/81306562/155857218-0b88a504-1073-4668-8aaa-cd9fe278808d.png)
+ ![Screenshot 2022-02-27 012035](https://user-images.githubusercontent.com/81306562/155857278-a48e80b9-74a0-4e32-9544-17d708407a5c.png)
+![Screenshot 2022-02-27 012227](https://user-images.githubusercontent.com/81306562/155857291-1734468a-c364-439b-b6d1-3f2239e58d0b.png)
 
+ 
  ## Built with
  1. Python
  2. Django!
